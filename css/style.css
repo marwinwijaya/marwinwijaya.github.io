@@ -702,6 +702,9 @@ a:active {
   margin-bottom: 5px;
   display: block;
 }
+.site-contact-details li i {
+  margin-right: 5px;
+}
 
 .site-footer {
   padding: 3em 0;
