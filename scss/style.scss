@@ -286,9 +286,16 @@ a {
 	font-weight: 200;
 	line-height: 1.5;
 }
+// Ensure equal height for organization cards
+
+// organization cards stretch to equal height regardless of text length
 .site-service-item {
-	.icon {
-		display: block;
+       display: flex;
+       flex-direction: column;
+       height: 100%;
+
+        .icon {
+                display: block;
 		
 		margin-bottom: 50px;
 		
@@ -308,10 +315,14 @@ a {
 			top: 50%;
 		}
 	}
-	h3 {
-		font-size: 20px;
-		font-weight: 200;
-	}
+       h3 {
+               font-size: 20px;
+               font-weight: 200;
+               min-height: 3em; // reserve space so titles align
+       }
+       p {
+               flex-grow: 1; // fill remaining height for equal cards
+       }
 }
 
 .site-link {
