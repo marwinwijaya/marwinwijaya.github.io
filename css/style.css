@@ -615,13 +615,19 @@ a:hover, a:focus, a:active {
   border: 1px solid rgb(179.1617021277, 188.7829787234, 197.8382978723);
 }
 
-.site-contact-details, .site-contact-details li {
+.site-contact-details,
+.site-contact-details li {
   padding: 0;
   margin: 0;
+}
+.site-contact-details {
+  display: flex;
+  flex-wrap: wrap;
 }
 .site-contact-details li {
   list-style: none;
   margin-bottom: 20px;
+  width: 50%;
 }
 .site-contact-details li > span {
   color: #2c3e50;
@@ -630,6 +636,11 @@ a:hover, a:focus, a:active {
   font-weight: 500;
   margin-bottom: 5px;
   display: block;
+}
+@media (max-width: 768px) {
+  .site-contact-details li {
+    width: 100%;
+  }
 }
 
 .site-footer {
