@@ -48,6 +48,13 @@ a {
 		text-decoration: none;
 	}
 }
+.underline-link {
+    text-decoration: underline;
+}
+.underline-link:hover, .underline-link:focus, .underline-link:active {
+    text-decoration: underline;
+}
+
 
 .parent-nav-link-padding {
 	padding: 15px 20px!important;
