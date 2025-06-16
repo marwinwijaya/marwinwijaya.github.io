@@ -231,7 +231,7 @@ a:active {
 }
 
 .site-section {
-  padding: 5em 0;
+  padding: 4rem 0;
 }
 
 .section-heading {
@@ -807,10 +807,19 @@ a:active {
   display: block;
 }
 
+.single-portfolio .thumb {
+  overflow: hidden;
+}
+
 .single-portfolio img {
   width: 100%;
   height: auto;
   border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.single-portfolio:hover img {
+  transform: scale(1.05);
 }
 
 .single-portfolio .p-inner {
