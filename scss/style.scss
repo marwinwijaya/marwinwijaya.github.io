@@ -286,9 +286,14 @@ a {
 	font-weight: 200;
 	line-height: 1.5;
 }
+// Ensure equal height for organization cards
 .site-service-item {
-	.icon {
-		display: block;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .icon {
+                display: block;
 		
 		margin-bottom: 50px;
 		
