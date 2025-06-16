@@ -1,7 +1,9 @@
 # marwinwijaya.github.io
+
 Web CV &amp; Portofolio Muhamad Arwin Wijaya (http://marwinwijaya.github.io)
 
 ## Purpose
+
 This repository contains the source for my personal portfolio website. It is a
 static site hosted via GitHub Pages showcasing my curriculum vitae and side
 projects.
@@ -11,6 +13,7 @@ projects.
 A custom `404.html` page provides a friendly message when visitors navigate to an unknown route. GitHub Pages automatically uses this file when present in the repository root.
 
 ## Local Preview
+
 You can preview the site locally by cloning this repository and serving the
 files with any static server. For example, with Python installed:
 
@@ -36,17 +39,34 @@ The site will be available at `http://localhost:8080`. This setup better mirrors
 production caching behaviour and improves Lighthouse scores for the "Serve
 static assets with an efficient cache policy" audit.
 
+## Development Setup
+
+First install the dependencies:
+
+```bash
+npm install
+```
+
+Compile the assets and start the development server:
+
+```bash
+npm run build
+npm start
+```
+
+This will generate the compiled CSS and JavaScript in `css/` and `js/` and serve the site locally at `http://localhost:8080`.
+
 ## Updating Styles and Scripts
-Custom styles are authored in the `scss/` directory using Sass and compiled to
-`css/style.css`.
-JavaScript sources live in `js/` with minified versions committed for
-production. Edit the unminified files (`custom.js`, `scripts.js`) and re-minify
-them using your preferred tool before committing.
+
+Custom styles are authored in the `scss/` directory using Sass. Run `npm run build` to compile `scss/style.scss` into `css/style.css` and a minified variant.
+JavaScript sources live in `js/` and are minified using [Terser](https://github.com/terser/terser) as part of the same build step.
+Edit the unminified files (`custom.js`) and re-run the build before committing.
 
 The site depends on [Bootstrap](https://getbootstrap.com/), jQuery, and several
 jQuery plugins located in `js/vendor/`.
 
 ## Performance
+
 Static assets are cached using a simple Service Worker (`sw.js`) registered on
 page load. This enables repeat visits to load faster and allows basic offline
 browsing. Fonts include `font-display: swap` so text remains visible while custom
@@ -56,6 +76,7 @@ The CSS for unused animation and slider libraries has been removed and core
 stylesheets are now preloaded to improve render performance.
 
 ## Contributing
+
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for contribution guidelines. By
 participating in this project you agree to abide by the
 [Code of Conduct](CODE_OF_CONDUCT.md).
