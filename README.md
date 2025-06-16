@@ -31,6 +31,12 @@ them using your preferred tool before committing.
 The site depends on [Bootstrap](https://getbootstrap.com/), jQuery, and several
 jQuery plugins located in `js/vendor/`.
 
+## Performance
+Static assets are cached using a simple Service Worker (`sw.js`) registered on
+page load. This enables repeat visits to load faster and allows basic offline
+browsing. Fonts include `font-display: swap` so text remains visible while custom
+fonts download.
+
 ## Contributing
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for contribution guidelines. By
 participating in this project you agree to abide by the
