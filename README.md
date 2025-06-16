@@ -21,6 +21,21 @@ python3 -m http.server
 Then browse to `http://localhost:8000` to view the site. Updates pushed to the
 `main` branch are automatically published through GitHub Pages.
 
+### Node server with cache headers
+
+This project also includes a minimal Express server (`server.js`) configured
+to deliver static assets with a long cache lifetime (`Cache-Control: immutable,
+max-age=31536000`). Run it with:
+
+```bash
+npm install
+npm start
+```
+
+The site will be available at `http://localhost:8080`. This setup better mirrors
+production caching behaviour and improves Lighthouse scores for the "Serve
+static assets with an efficient cache policy" audit.
+
 ## Updating Styles and Scripts
 Custom styles are authored in the `scss/` directory using Sass and compiled to
 `css/style.css`.

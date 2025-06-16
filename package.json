@@ -1,0 +1,17 @@
+{
+  "name": "marwinwijaya.github.io",
+  "version": "1.0.0",
+  "description": "Web CV &amp; Portofolio Muhamad Arwin Wijaya (http://marwinwijaya.github.io)",
+  "main": "sw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
