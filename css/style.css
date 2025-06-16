@@ -30,10 +30,15 @@ body {
   color: #fff;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   color: #2c3e50;
   font-weight: 200;
 }
+
 h1 {
   font-size: 2.5rem;
 }
@@ -47,16 +52,19 @@ a:hover, a:focus, a:active {
   text-decoration: none;
 }
 
-.parent-nav-link-padding, .site-navbar .navbar-nav > li > a {
-  padding: 15px 20px !important;
-}
 .underline-link {
   text-decoration: underline;
 }
-.underline-link:hover, .underline-link:focus, .underline-link:active {
+
+.underline-link:hover,
+.underline-link:focus,
+.underline-link:active {
   text-decoration: underline;
 }
 
+.parent-nav-link-padding, .site-navbar .navbar-nav > li > a {
+  padding: 15px 20px !important;
+}
 
 .site-navbar {
   border: none;
@@ -171,7 +179,8 @@ a:hover, a:focus, a:active {
   position: relative;
   overflow: hidden;
 }
-.site-hero, .site-hero .row {
+.site-hero,
+.site-hero .row {
   height: 100vh;
   min-height: 800px;
 }
@@ -198,7 +207,8 @@ a:hover, a:focus, a:active {
     font-size: 70px;
   }
 }
-.site-hero h1, .site-hero .lead {
+.site-hero h1,
+.site-hero .lead {
   font-weight: 200;
   color: #fff;
 }
@@ -575,7 +585,8 @@ a:hover, a:focus, a:active {
   display: block;
   font-size: 20px;
 }
-.resume-item h3, .resume-item .school {
+.resume-item h3,
+.resume-item .school {
   color: #2c3e50;
 }
 
@@ -625,16 +636,16 @@ a:hover, a:focus, a:active {
   border: 1px solid rgb(179.1617021277, 188.7829787234, 197.8382978723);
 }
 
-.site-contact-details,
-.site-contact-details li {
-  padding: 0;
-  margin: 0;
-}
 .site-contact-details {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
+}
+.site-contact-details,
+.site-contact-details li {
+  padding: 0;
+  margin: 0;
 }
 .site-contact-details li {
   list-style: none;
@@ -708,6 +719,22 @@ a:hover, a:focus, a:active {
 .block-47 .block-47-quote .block-47-quote-author {
   font-size: 14px;
   color: #666666;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
 }
 
 /*# sourceMappingURL=style.css.map */
