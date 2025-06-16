@@ -623,6 +623,8 @@ a:hover, a:focus, a:active {
 .site-contact-details {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
 .site-contact-details li {
   list-style: none;
