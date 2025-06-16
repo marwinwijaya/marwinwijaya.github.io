@@ -3,8 +3,6 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/css/bootstrap.css',
-  '/css/animate.css',
-  '/css/flexslider.css',
   '/css/style.css',
   '/js/custom.js',
   '/js/vendor/jquery-3.7.1.min.js',
