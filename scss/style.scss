@@ -4,9 +4,9 @@
 @import "bootstrap/mixins";
 
 
-body {	
-	background: $white;
-	color: #798a9a;
+body {
+        background: $white;
+        color: #333;
 	line-height: 1.7;
 	font-size: 16px;
 	font-weight: 300;
@@ -459,9 +459,9 @@ a {
 		.cat {
 			font-size: 12px;
 			text-transform: uppercase;
-			color: lighten($black, 80%);
-		}
-	}
+                       color: #555;
+               }
+       }
 }
 
 /*--------- Start Portfolio Area -------------*/
@@ -623,7 +623,7 @@ a {
 		margin-bottom: 10px;
 		font-size: 12px;
 		letter-spacing: .1em; 
-		color: lighten(#798a9a, 20%);
+               color: #555;
 		text-transform: uppercase;
 	}
 	.school {
@@ -666,7 +666,7 @@ a {
 		a {
 			display: inline-block;
 			margin-right: 10px;
-			color: lighten(#798a9a, 10%);
+                       color: #555;
 			&:hover {
 				color: $primary;
 			}
