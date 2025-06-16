@@ -52,6 +52,9 @@ page load. This enables repeat visits to load faster and allows basic offline
 browsing. Fonts include `font-display: swap` so text remains visible while custom
 fonts download.
 
+The CSS for unused animation and slider libraries has been removed and core
+stylesheets are now preloaded to improve render performance.
+
 ## Contributing
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for contribution guidelines. By
 participating in this project you agree to abide by the
