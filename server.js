@@ -14,7 +14,7 @@ const limiter = RateLimit({
 app.use(limiter);
 
 // Serve static files with long cache TTL (1 year)
-app.use(express.static(__dirname, {
+app.use(express.static(path.join(__dirname, 'public'), {
   maxAge: '1y',
   immutable: true
 }));
