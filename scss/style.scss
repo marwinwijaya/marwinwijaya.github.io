@@ -270,7 +270,7 @@ a {
   .site-subheading {
     max-width: 640px;
     margin: 0 auto;
-    color: rgba(255, 255, 255, 0.5);
+    color: $white;
   }
 }
 
@@ -803,7 +803,7 @@ a {
 
     .block-47-quote-author {
       font-size: 14px;
-      color: lighten($black, 40%);
+      color: lighten($black, 20%);
     }
   }
 }

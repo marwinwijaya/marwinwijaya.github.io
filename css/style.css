@@ -218,7 +218,7 @@ a:hover, a:focus, a:active {
 .site-hero .site-subheading {
   max-width: 640px;
   margin: 0 auto;
-  color: rgba(255, 255, 255, 0.5);
+  color: #fff;
 }
 
 .site-section {
@@ -718,7 +718,7 @@ a:hover, a:focus, a:active {
 }
 .block-47 .block-47-quote .block-47-quote-author {
   font-size: 14px;
-  color: #666666;
+  color: #333333;
 }
 
 .left {
