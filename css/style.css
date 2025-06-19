@@ -423,6 +423,11 @@ a:hover, a:focus, a:active {
   text-transform: uppercase;
   color: #555;
 }
+.single-portfolio .p-inner .year {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #555;
+}
 
 /*--------- Start Portfolio Area -------------*/
 .portfolio-area .primary-btn {
