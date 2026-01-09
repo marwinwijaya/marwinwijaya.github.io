@@ -2,17 +2,169 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Page Not Found</title>
+    <title>404 - Page Not Found</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --ink: #1a1a1a;
+        --muted: #6b7280;
+        --accent: #57d131;
+        --accent-dark: #3aa61c;
+        --glow: rgba(87, 209, 49, 0.28);
+        --bg-1: #f6fbf4;
+        --bg-2: #eef7e9;
+        --bg-3: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Nunito Sans", "Inter", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(1200px 700px at 10% 10%, var(--bg-2), transparent 60%),
+          radial-gradient(900px 700px at 90% 20%, var(--bg-3), transparent 55%),
+          linear-gradient(120deg, var(--bg-1), #ffffff);
+      }
+
+      .wrap {
+        width: min(960px, 92vw);
+        margin: 48px auto;
+        position: relative;
+        padding: 64px 36px;
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 24px 60px rgba(19, 84, 0, 0.12);
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .orb {
+        position: absolute;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 30% 30%, #a8e98f, #57d131);
+        filter: blur(0.5px);
+        opacity: 0.18;
+        animation: float 8s ease-in-out infinite;
+      }
+
+      .orb.one {
+        top: -90px;
+        left: -90px;
+      }
+
+      .orb.two {
+        bottom: -120px;
+        right: -60px;
+        animation-delay: -2s;
+      }
+
+      .code {
+        font-family: "Inter", "Nunito Sans", "Segoe UI", sans-serif;
+        font-size: clamp(72px, 16vw, 160px);
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        margin: 0;
+        color: var(--accent-dark);
+        text-shadow: 0 18px 36px var(--glow);
+      }
+
+      .title {
+        font-family: "Nunito Sans", "Inter", "Segoe UI", sans-serif;
+        font-size: clamp(22px, 4vw, 32px);
+        margin: 10px 0 6px;
+        font-weight: 600;
+      }
+
+      .subtitle {
+        margin: 0 auto 28px;
+        font-size: clamp(14px, 2.4vw, 18px);
+        color: var(--muted);
+        max-width: 540px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 24px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(87, 209, 49, 0.35);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--accent-dark);
+        border-color: rgba(44, 122, 123, 0.4);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .footer {
+        margin-top: 28px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(18px);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .wrap {
+          padding: 48px 22px;
+        }
+      }
+    </style>
   </head>
-  <body class="text-center">
-    <div class="container">
-      <h1 class="display-4 mt-5">404 - Page Not Found</h1>
-      <p class="lead">Sorry, the page you were looking for doesn't exist.</p>
-      <p><a href="index.html" class="btn btn-primary mt-3">Return Home</a></p>
-    </div>
+  <body>
+    <main class="wrap">
+      <div class="orb one" aria-hidden="true"></div>
+      <div class="orb two" aria-hidden="true"></div>
+      <p class="code">404</p>
+      <h1 class="title">Page not found</h1>
+      <p class="subtitle">The page you are looking for does not exist or has been moved. Let’s get you back to the main CV.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="index.html">Return Home</a>
+        <a class="btn btn-secondary" href="index.html#section-contact">Contact Me</a>
+      </div>
+      <p class="footer">If you typed the address manually, please check the spelling.</p>
+    </main>
   </body>
 </html>

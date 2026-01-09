@@ -2,20 +2,24 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+This is a static site hosted on GitHub Pages. The latest code on the `main`
+branch is supported.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| Version | Supported |
+| ------- | --------- |
+| main    | yes       |
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+Please report security issues by email:
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+- Email: muhamad.arwinwijaya@gmail.com
+
+When reporting, include:
+
+- A clear description of the issue and impact
+- Steps to reproduce (if applicable)
+- Any relevant URLs, screenshots, or logs
+
+I aim to respond within 7 days. If the issue is confirmed, a fix will be
+prioritized and deployed to GitHub Pages.
