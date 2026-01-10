@@ -354,6 +354,54 @@ a:hover, a:focus, a:active {
 .btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
   background: rgb(77.5, 190.0595238095, 42.4404761905);
 }
+.adblock-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 22px 28px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+  min-width: 320px;
+}
+.adblock-alert__content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.adblock-alert__text {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.adblock-alert__desc {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+.adblock-alert__countdown {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 14px;
+  font-weight: 700;
+  min-width: 28px;
+  text-align: center;
+}
+.adblock-alert__btn {
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
 .btn.btn-linkedin {
   background-color: #0a66c2;
   border-color: #0a66c2;
@@ -402,6 +450,9 @@ a:hover, a:focus, a:active {
 
 .skill h3 {
   font-size: 18px;
+}
+.img-rounded {
+  border-radius: 18px;
 }
 
 .filters {

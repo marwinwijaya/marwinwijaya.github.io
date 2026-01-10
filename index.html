@@ -3,13 +3,7 @@
   <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CVZKHH1X52"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-CVZKHH1X52');
-    </script>
+    <script defer src="js/google-analytics.js"></script>
 
     <link rel="icon" type="image/png" href="images/logo.png" />
     <title>Muhamad Arwin Wijaya &mdash; Web CV</title>
@@ -51,6 +45,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
   </head>
   <body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
+    <div class="adblock-alert" id="adblock-alert" role="alert" aria-live="polite" hidden>
+      <div class="adblock-alert__content">
+        <p class="adblock-alert__text">
+          Matikan Adblock
+          <span class="adblock-alert__countdown" id="adblock-countdown">5</span>
+        </p>
+        <p class="adblock-alert__desc">Agar data kunjungan tercatat untuk analisa di Google Analytics.</p>
+      </div>
+      <button type="button" class="btn btn-primary btn-sm adblock-alert__btn" id="adblock-dismiss">Saya sudah mematikan</button>
+    </div>
     <nav class="navbar navbar-expand-lg site-navbar navbar-light bg-light" id="pb-navbar">
       <div class="container"><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand" href="index.html">Artwin</a>
         <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample09">
@@ -81,10 +85,10 @@
     <section class="site-section" id="section-about">
       <div class="container">
         <div class="row mb-5 align-items-center">
-          <div class="col-lg-7 pr-lg-5 mb-5 mb-lg-0">
-            <img loading="lazy" src="images/maw.jpg" alt="Photo of Muhamad Arwin Wijaya" class="img-fluid" width="1196" height="1600" />
+          <div class="col-lg-6 pr-lg-4 mb-5 mb-lg-0">
+            <img loading="lazy" src="images/maw2.jpeg" alt="Photo of Muhamad Arwin Wijaya" class="img-fluid img-rounded" width="1196" height="1600" />
           </div>
-          <div class="col-lg-5 pl-lg-5">
+          <div class="col-lg-6 pl-lg-4">
             <div class="section-heading">
               <h2>About <strong>Me</strong>
               </h2>
@@ -909,10 +913,8 @@
         </div>
         <div class="row">
           <p class="col-12 text-center">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> Copyright &copy; <script>
-              document.write(new Date().getFullYear());
-            </script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" class="underline-link text-primary" target="_blank" rel="noopener noreferrer">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> Copyright &copy; <span id="currentYear"></span> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" rel="noopener noreferrer" class="text-primary">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> Copyright &copy; <span class="currentYear"></span> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" class="underline-link text-primary" target="_blank" rel="noopener noreferrer">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> Copyright &copy; <span class="currentYear"></span> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" rel="noopener noreferrer" class="text-primary">Colorlib</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
         </div>
@@ -928,27 +930,7 @@
     <script defer src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script defer src="js/custom.js"></script>
-    
-    <script>
-    if ("serviceWorker" in navigator) {
-      const isLocalhost =
-        location.hostname === "localhost" ||
-        location.hostname === "127.0.0.1" ||
-        location.hostname === "[::1]";
-
-      if (!isLocalhost) {
-        navigator.serviceWorker.register("/sw.js");
-      } else {
-        // optional: bersihin SW yang keburu ke-register di localhost
-        navigator.serviceWorker.getRegistrations().then((regs) => {
-          regs.forEach((r) => r.unregister());
-        });
-      }
-    }
-    </script>
-
-    <script>
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+    <script defer src="js/detect-ad-block.js"></script>
+    <script defer src="js/site.js"></script>
   </body>
 </html>
