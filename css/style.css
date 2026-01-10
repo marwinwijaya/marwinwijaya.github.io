@@ -354,6 +354,16 @@ a:hover, a:focus, a:active {
 .btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
   background: rgb(77.5, 190.0595238095, 42.4404761905);
 }
+.btn.btn-linkedin {
+  background-color: #0a66c2;
+  border-color: #0a66c2;
+  color: #fff;
+}
+.btn.btn-linkedin:hover, .btn.btn-linkedin:active, .btn.btn-linkedin:focus {
+  background-color: #004182;
+  border-color: #004182;
+  color: #fff;
+}
 
 .progress {
   overflow: visible;
