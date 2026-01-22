@@ -354,6 +354,21 @@ a:hover, a:focus, a:active {
 .btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
   background: rgb(77.5, 190.0595238095, 42.4404761905);
 }
+
+.about-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 575.98px) {
+  .about-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
 .adblock-alert {
   position: fixed;
   top: 50%;
