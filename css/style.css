@@ -532,6 +532,20 @@ a:hover, a:focus, a:active {
   font-size: 16px;
   font-weight: 600;
   color: #1a1a1a;
+  text-decoration: none;
+}
+
+.services-meta .meta-link:hover,
+.services-meta .meta-link:focus {
+  color: #0b5e00;
+}
+
+.services-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 28px;
 }
 
 .services-grid {
