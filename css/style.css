@@ -546,6 +546,7 @@ a:hover, a:focus, a:active {
   justify-content: center;
   gap: 12px;
   margin: 0 auto 28px;
+  width: 100%;
 }
 
 .services-grid {

@@ -1,6 +1,6 @@
 // sw.js - "dev-friendly" service worker
 
-const CACHE_VERSION = "v5"; // <--- NAIKKAN INI tiap release
+const CACHE_VERSION = "v6"; // <--- NAIKKAN INI tiap release
 const CACHE_NAME = `portfolio-cache-${CACHE_VERSION}`;
 
 // App shell / asset yang aman di-cache
