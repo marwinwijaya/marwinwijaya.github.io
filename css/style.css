@@ -245,6 +245,12 @@ a:hover, a:focus, a:active {
 .section-heading h2.certificate-title {
   font-size: 24px;
 }
+
+/* Collapsed lists (Work/Organization) */
+#work-experience-list:not(.is-expanded) > .col-md-6:nth-child(n+5) {
+  display: none;
+}
+
 .section-heading h2 strong {
   font-weight: 800;
 }

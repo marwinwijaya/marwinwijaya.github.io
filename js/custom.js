@@ -363,6 +363,54 @@
 		applyCertLimit();
 	};
 
+	var initListToggle = function(containerSelector, itemSelector, limit, buttonSelector) {
+		var $container = $(containerSelector);
+		var $btn = $(buttonSelector);
+		if (!$container.length || !$btn.length) return;
+
+		var expanded = false;
+
+		var apply = function() {
+			var $items = $container.find(itemSelector);
+			if ($items.length <= limit) {
+				$items.each(function(_, el) {
+					el.style.removeProperty("display");
+				});
+				$btn.hide();
+				$container.addClass("is-expanded");
+				return;
+			}
+
+			if (expanded) {
+				$items.each(function(_, el) {
+					el.style.removeProperty("display");
+				});
+				$container.addClass("is-expanded");
+			} else {
+				$items.each(function(idx, el) {
+					if (idx < limit) {
+						el.style.removeProperty("display");
+					} else {
+						el.style.setProperty("display", "none", "important");
+					}
+				});
+				$container.removeClass("is-expanded");
+			}
+
+			$btn
+				.show()
+				.text(expanded ? "View Less" : "View More")
+				.attr("data-expanded", expanded ? "true" : "false");
+		};
+
+		$btn.on("click", function() {
+			expanded = !expanded;
+			apply();
+		});
+
+		apply();
+	};
+
         var backToTop = function() {
             var btn = $('.back-to-top');
             $(window).scroll(function() {
@@ -391,9 +439,11 @@
 		// navigationSection();
                 // magnificPopupControl();
                 smoothScroll();
-                portfolioMasonry();
-                backToTop();
-        });
+  		portfolioMasonry();
+			initListToggle("#work-experience-list", "> .col-md-6", 4, "#work-toggle");
+			initListToggle("#org-experience-list", "> .col-md-6", 3, "#org-toggle");
+  		backToTop();
+          });
 
 	
 
