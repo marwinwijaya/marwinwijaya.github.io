@@ -298,7 +298,7 @@
 
 	var portfolioMasonry = function() {
 		var $grid = null;
-		var CERT_LIMIT = 9;
+		var CERT_LIMIT = 6;
 		var certExpanded = false;
 		var currentFilter = "*";
 
