@@ -298,6 +298,9 @@
 
 	var portfolioMasonry = function() {
 		var $grid = null;
+		var CERT_LIMIT = 9;
+		var certExpanded = false;
+		var currentFilter = "*";
 
 		if (document.getElementById("section-certificate")) {
 			$grid = $(".filters-content .grid").isotope({
@@ -312,17 +315,52 @@
 			});
 		}
 
+		var updateCertToggle = function(totalCount) {
+			var $btn = $("#cert-toggle");
+			if (!$btn.length) return;
+			if (typeof totalCount === "number" && totalCount <= CERT_LIMIT) {
+				$btn.hide();
+				return;
+			}
+			$btn
+				.show()
+				.text(certExpanded ? "Less" : "View More")
+				.attr("data-expanded", certExpanded ? "true" : "false");
+		};
+
+		var applyCertLimit = function() {
+			if (!$grid) return;
+
+			$grid.isotope({ filter: currentFilter });
+			var allItems = $grid.isotope("getFilteredItemElements");
+
+			if (!certExpanded && allItems.length > CERT_LIMIT) {
+				var allowed = new Set(allItems.slice(0, CERT_LIMIT));
+				$grid.isotope({
+					filter: function() {
+						return allowed.has(this);
+					}
+				});
+			}
+
+			updateCertToggle(allItems.length);
+		};
+
+		$("#cert-toggle").on("click", function() {
+			certExpanded = !certExpanded;
+			applyCertLimit();
+		});
+
 		$('.filters ul li').click(function(){
 			$('.filters ul li').removeClass('active');
 			$(this).addClass('active');
 			
-			var data = $(this).attr('data-filter');
-			if ($grid) {
-				$grid.isotope({
-					filter: data
-				});
-			}
+			currentFilter = $(this).attr('data-filter') || "*";
+			certExpanded = false;
+			applyCertLimit();
 		});
+
+		applyCertLimit();
 	};
 
         var backToTop = function() {
