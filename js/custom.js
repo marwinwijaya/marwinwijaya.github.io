@@ -324,7 +324,7 @@
 			}
 			$btn
 				.show()
-				.text(certExpanded ? "Less" : "View More")
+				.text(certExpanded ? "View Less" : "View More")
 				.attr("data-expanded", certExpanded ? "true" : "false");
 		};
 
