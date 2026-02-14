@@ -107,3 +107,10 @@ stylesheets are now preloaded to improve render performance.
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for contribution guidelines. By
 participating in this project you agree to abide by the
 [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Login Page
+
+A simple `login.html` page allows authentication via Firebase. After a
+successful login, the script stores the user's email, name, role and the
+`last_login` timestamp in Firebase Realtime Database. Update `js/auth.js` with
+your own Firebase configuration before deploying.
