@@ -1,12 +1,39 @@
 # marwinwijaya.github.io
 
-Web CV &amp; Portofolio Muhamad Arwin Wijaya (http://marwinwijaya.github.io)
+Web CV &amp; Portfolio for Muhamad Arwin Wijaya (http://marwinwijaya.github.io)
 
 ## Purpose
 
 This repository contains the source for my personal portfolio website. It is a
-static site hosted via GitHub Pages showcasing my curriculum vitae and side
-projects.
+static site hosted via GitHub Pages showcasing my curriculum vitae, crop
+analytics projects, and certifications.
+
+## Content Overview
+
+- About and summary (AWS, DevOps, web/mobile, IoT)
+- Education with publication link
+- Work experience timeline
+- Crop analytics projects (AI Pineapple population, AI Banana population & girth, AI Guava counting & sizing)
+- Organizational experience
+- Certificates gallery
+- Contact details (email, phone, socials, LinkedIn)
+
+## Tech Stack
+
+- HTML5, CSS3, JavaScript
+- Bootstrap, jQuery, Isotope, ImagesLoaded
+- Sass (SCSS) for styling
+- Node.js + Express for local server
+- Service Worker for caching/offline
+
+## Screenshots
+
+Add screenshots to `images/` and link them here. Example:
+
+```md
+![Home](images/screenshot-home.png)
+![Projects](images/screenshot-projects.png)
+```
 
 ## 404 Page
 

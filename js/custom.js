@@ -297,29 +297,119 @@
 
 
 	var portfolioMasonry = function() {
- $('.filters ul li').click(function(){
-        $('.filters ul li').removeClass('active');
-        $(this).addClass('active');
-        
-        var data = $(this).attr('data-filter');
-        $grid.isotope({
-          filter: data
-        })
-      });
+		var $grid = null;
+		var CERT_LIMIT = 6;
+		var certExpanded = false;
+		var currentFilter = "*";
 
+		if (document.getElementById("section-certificate")) {
+			$grid = $(".filters-content .grid").isotope({
+				itemSelector: ".all",
+				percentPosition: true,
+				layoutMode: "fitRows",
+				getSortData: {
+					year: ".year parseInt"
+				},
+				sortBy: "year",
+				sortAscending: false
+			});
+		}
 
-      if(document.getElementById("section-portfolio")){
-            var $grid = $(".grid").isotope({
-              itemSelector: ".all",
-              percentPosition: true,
-              masonry: {
-                columnWidth: ".all"
-              }
-            })
-      };
+		var updateCertToggle = function(totalCount) {
+			var $btn = $("#cert-toggle");
+			if (!$btn.length) return;
+			if (typeof totalCount === "number" && totalCount <= CERT_LIMIT) {
+				$btn.hide();
+				return;
+			}
+			$btn
+				.show()
+				.text(certExpanded ? "View Less" : "View More")
+				.attr("data-expanded", certExpanded ? "true" : "false");
+		};
 
+		var applyCertLimit = function() {
+			if (!$grid) return;
 
-        };
+			$grid.isotope({ filter: currentFilter });
+			var allItems = $grid.isotope("getFilteredItemElements");
+
+			if (!certExpanded && allItems.length > CERT_LIMIT) {
+				var allowed = new Set(allItems.slice(0, CERT_LIMIT));
+				$grid.isotope({
+					filter: function() {
+						return allowed.has(this);
+					}
+				});
+			}
+
+			updateCertToggle(allItems.length);
+		};
+
+		$("#cert-toggle").on("click", function() {
+			certExpanded = !certExpanded;
+			applyCertLimit();
+		});
+
+		$('.filters ul li').click(function(){
+			$('.filters ul li').removeClass('active');
+			$(this).addClass('active');
+			
+			currentFilter = $(this).attr('data-filter') || "*";
+			certExpanded = false;
+			applyCertLimit();
+		});
+
+		applyCertLimit();
+	};
+
+	var initListToggle = function(containerSelector, itemSelector, limit, buttonSelector) {
+		var $container = $(containerSelector);
+		var $btn = $(buttonSelector);
+		if (!$container.length || !$btn.length) return;
+
+		var expanded = false;
+
+		var apply = function() {
+			var $items = $container.find(itemSelector);
+			if ($items.length <= limit) {
+				$items.each(function(_, el) {
+					el.style.removeProperty("display");
+				});
+				$btn.hide();
+				$container.addClass("is-expanded");
+				return;
+			}
+
+			if (expanded) {
+				$items.each(function(_, el) {
+					el.style.removeProperty("display");
+				});
+				$container.addClass("is-expanded");
+			} else {
+				$items.each(function(idx, el) {
+					if (idx < limit) {
+						el.style.removeProperty("display");
+					} else {
+						el.style.setProperty("display", "none", "important");
+					}
+				});
+				$container.removeClass("is-expanded");
+			}
+
+			$btn
+				.show()
+				.text(expanded ? "View Less" : "View More")
+				.attr("data-expanded", expanded ? "true" : "false");
+		};
+
+		$btn.on("click", function() {
+			expanded = !expanded;
+			apply();
+		});
+
+		apply();
+	};
 
         var backToTop = function() {
             var btn = $('.back-to-top');
@@ -349,9 +439,11 @@
 		// navigationSection();
                 // magnificPopupControl();
                 smoothScroll();
-                portfolioMasonry();
-                backToTop();
-        });
+  		portfolioMasonry();
+			initListToggle("#work-experience-list", "> .col-md-6", 4, "#work-toggle");
+			initListToggle("#org-experience-list", "> .col-md-6", 3, "#org-toggle");
+  		backToTop();
+          });
 
 	
 
