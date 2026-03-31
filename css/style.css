@@ -433,6 +433,16 @@ a:hover, a:focus, a:active {
   border-color: #004182;
   color: #fff;
 }
+.btn.btn-github {
+  background-color: #24292f;
+  border-color: #24292f;
+  color: #fff;
+}
+.btn.btn-github:hover, .btn.btn-github:active, .btn.btn-github:focus {
+  background-color: #0d1117;
+  border-color: #0d1117;
+  color: #fff;
+}
 
 .progress {
   overflow: visible;
