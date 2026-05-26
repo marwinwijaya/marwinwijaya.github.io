@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "created": "2026-05-26T00:00:00+07:00",
+  "last_updated": "2026-05-26T00:00:00+07:00",
+  "update_count": 0,
+  "mode": "build",
+  "project": "marwinwijaya.github.io",
+  "files_indexed": 20,
+  "concepts_mapped": 9,
+  "extracted_edges": 43,
+  "inferred_edges": 1,
+  "ambiguous_count": 2,
+  "god_nodes": [
+    {"file": "index.html", "connections": 9, "concept": "homepage-portfolio", "type": "page", "risk": "MEDIUM"},
+    {"file": "css/style.css", "connections": 6, "concept": "style-system", "type": "compiled-style", "risk": "MEDIUM"},
+    {"file": "js/custom.js", "connections": 5, "concept": "homepage-interactions", "type": "browser-script", "risk": "LOW"}
+  ],
+  "ambiguous": [
+    "scss/style.scss -> css/style.css drift requires human resolution",
+    "server.js -> public/ static root references a missing directory"
+  ]
+}

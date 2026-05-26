@@ -1,0 +1,199 @@
+{
+  "index.html": {
+    "state": "built",
+    "type": "page",
+    "concept": "homepage-portfolio",
+    "imports": [
+      "css/bootstrap.css",
+      "css/style.css",
+      "fonts/icomoon/style.css",
+      "js/google-analytics.js",
+      "js/custom.js",
+      "js/detect-ad-block.js",
+      "js/site.js",
+      "sw.js",
+      "cv/CV-Muhamad_Arwin_Wijaya.pdf"
+    ],
+    "imported_by": [],
+    "routes": ["/", "/index.html"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "404.html": {
+    "state": "built",
+    "type": "page",
+    "concept": "support-pages",
+    "imports": ["images/logo.png"],
+    "imported_by": [],
+    "routes": ["/404.html"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "privacy-policy.html": {
+    "state": "built",
+    "type": "page",
+    "concept": "legal-pages",
+    "imports": ["css/bootstrap.css", "css/style.css", "css/legal-pages.css", "images/logo.png"],
+    "imported_by": [],
+    "routes": ["/privacy-policy.html"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "terms-and-conditions.html": {
+    "state": "built",
+    "type": "page",
+    "concept": "legal-pages",
+    "imports": ["css/bootstrap.css", "css/style.css", "css/legal-pages.css", "images/logo.png"],
+    "imported_by": [],
+    "routes": ["/terms-and-conditions.html"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "cookie-policy.html": {
+    "state": "built",
+    "type": "page",
+    "concept": "legal-pages",
+    "imports": ["css/bootstrap.css", "css/style.css", "css/legal-pages.css", "images/logo.png"],
+    "imported_by": [],
+    "routes": ["/cookie-policy.html"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "security-statement.html": {
+    "state": "built",
+    "type": "page",
+    "concept": "legal-pages",
+    "imports": ["css/bootstrap.css", "css/style.css", "css/legal-pages.css", "images/logo.png"],
+    "imported_by": [],
+    "routes": ["/security-statement.html"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "disclaimer.html": {
+    "state": "built",
+    "type": "page",
+    "concept": "legal-pages",
+    "imports": ["css/bootstrap.css", "css/style.css", "css/legal-pages.css", "images/logo.png"],
+    "imported_by": [],
+    "routes": ["/disclaimer.html"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "scss/style.scss": {
+    "state": "built",
+    "type": "style-source",
+    "concept": "style-system",
+    "imports": ["scss/bootstrap/_functions.scss", "scss/bootstrap/_variables.scss", "scss/bootstrap/_mixins.scss"],
+    "imported_by": ["package.json"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "css/style.css": {
+    "state": "built",
+    "type": "compiled-style",
+    "concept": "style-system",
+    "imports": [],
+    "imported_by": ["index.html", "privacy-policy.html", "terms-and-conditions.html", "cookie-policy.html", "security-statement.html", "disclaimer.html"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": ["Known drift: contains production-only rules not present in scss/style.scss during init."]
+  },
+  "css/legal-pages.css": {
+    "state": "built",
+    "type": "style",
+    "concept": "legal-pages",
+    "imports": [],
+    "imported_by": ["privacy-policy.html", "terms-and-conditions.html", "cookie-policy.html", "security-statement.html", "disclaimer.html"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "js/custom.js": {
+    "state": "built",
+    "type": "browser-script",
+    "concept": "homepage-interactions",
+    "imports": ["js/vendor/jquery-3.7.1.min.js", "js/vendor/bootstrap.min.js", "js/vendor/jquery.waypoints.min.js"],
+    "imported_by": ["index.html", "package.json"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "js/custom.min.js": {
+    "state": "built",
+    "type": "compiled-script",
+    "concept": "homepage-interactions",
+    "imports": [],
+    "imported_by": ["package.json"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "js/site.js": {
+    "state": "built",
+    "type": "browser-script",
+    "concept": "site-utilities",
+    "imports": ["sw.js"],
+    "imported_by": ["index.html"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "js/detect-ad-block.js": {
+    "state": "built",
+    "type": "browser-script",
+    "concept": "analytics",
+    "imports": [],
+    "imported_by": ["index.html"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "js/google-analytics.js": {
+    "state": "built",
+    "type": "browser-script",
+    "concept": "analytics",
+    "imports": [],
+    "imported_by": ["index.html"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "sw.js": {
+    "state": "built",
+    "type": "service-worker",
+    "concept": "performance-cache",
+    "imports": [],
+    "imported_by": ["js/site.js", "index.html"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": ["Comment notes cache version should be bumped each release."]
+  },
+  "server.js": {
+    "state": "built",
+    "type": "local-server",
+    "concept": "local-preview",
+    "imports": ["express", "path", "express-rate-limit"],
+    "imported_by": ["package.json"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": ["Known issue: serves public/ directory, which was not observed in the repository."]
+  },
+  "package.json": {
+    "state": "built",
+    "type": "manifest",
+    "concept": "tooling",
+    "imports": ["server.js", "scss/style.scss", "js/custom.js"],
+    "imported_by": [],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "sitemap.xml": {
+    "state": "built",
+    "type": "seo",
+    "concept": "seo",
+    "imports": [],
+    "imported_by": ["robots.txt"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  },
+  "robots.txt": {
+    "state": "built",
+    "type": "seo",
+    "concept": "seo",
+    "imports": ["sitemap.xml"],
+    "imported_by": [],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "rationale": []
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "homepage-portfolio": {
+    "state": "built",
+    "type": "feature",
+    "files": ["index.html"],
+    "depends_on": ["style-system", "homepage-interactions", "site-utilities", "performance-cache", "analytics"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0}
+  },
+  "homepage-premium-portfolio-refinement": {
+    "state": "planned",
+    "type": "feature",
+    "files": [
+      "index.html",
+      "scss/style.scss",
+      "css/style.css",
+      "js/custom.js",
+      "js/custom.min.js",
+      "sw.js"
+    ],
+    "depends_on": ["homepage-portfolio", "style-system"],
+    "tasks": ["HP-01", "HP-02", "HP-03", "HP-04", "HP-05", "HP-06", "HP-07"],
+    "confidence": {"source": "INFERRED", "score": 0.95}
+  },
+  "style-system": {
+    "state": "built",
+    "type": "foundation",
+    "files": ["scss/style.scss", "css/style.css", "css/bootstrap.css", "css/legal-pages.css"],
+    "depends_on": [],
+    "confidence": {"source": "EXTRACTED", "score": 1.0}
+  },
+  "homepage-interactions": {
+    "state": "built",
+    "type": "feature",
+    "files": ["js/custom.js", "js/custom.min.js"],
+    "depends_on": ["homepage-portfolio"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0}
+  },
+  "legal-pages": {
+    "state": "built",
+    "type": "feature",
+    "files": [
+      "privacy-policy.html",
+      "terms-and-conditions.html",
+      "cookie-policy.html",
+      "security-statement.html",
+      "disclaimer.html",
+      "css/legal-pages.css"
+    ],
+    "depends_on": ["style-system"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0}
+  },
+  "analytics": {
+    "state": "built",
+    "type": "integration",
+    "files": ["js/google-analytics.js", "js/detect-ad-block.js"],
+    "depends_on": ["homepage-portfolio"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0}
+  },
+  "performance-cache": {
+    "state": "built",
+    "type": "foundation",
+    "files": ["sw.js"],
+    "depends_on": ["homepage-portfolio"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0}
+  },
+  "local-preview": {
+    "state": "partial",
+    "type": "tooling",
+    "files": ["server.js", "package.json"],
+    "depends_on": ["tooling"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0},
+    "notes": ["server.js static root needs verification."]
+  },
+  "seo": {
+    "state": "built",
+    "type": "support",
+    "files": ["sitemap.xml", "robots.txt", "404.html"],
+    "depends_on": ["homepage-portfolio"],
+    "confidence": {"source": "EXTRACTED", "score": 1.0}
+  }
+}
