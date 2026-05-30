@@ -28,7 +28,8 @@ In planning:
 
 ## Phase Gates
 
-No phase structure. This is an existing project. Use `review:` on demand before deploy.
+Init review: ✅ reviewed 2026-05-26 — 0 P0 review-specific (3 P0 mapped to HP-01/HP-02/audit), 3 P1 logged to backlog
+Homepage refinement gate: 🔴 BLOCKED — 3 P0 issues (SCSS/CSS drift, navbar anchors, npm audit); HP-01 and HP-02 address first two
 
 ## What's Next
 

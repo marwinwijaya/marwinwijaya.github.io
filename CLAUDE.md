@@ -1,91 +1,82 @@
-# Project Guide - marwinwijaya.github.io
-> Onboarded via vibe-init on 2026-05-26.
-> Existing static portfolio project. Read `vibe/CODEBASE.md` before making changes.
+# CLAUDE.md
 
-## Project Purpose
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-Personal CV and portfolio website for Muhamad Arwin Wijaya, now being prepared for stronger positioning as AI Engineer Lead and DevOps Lead.
+## Project
 
-## Startup Checklist
-
-1. Read `vibe/CODEBASE.md`.
-2. Read `vibe/ARCHITECTURE.md`.
-3. Read `vibe/SPEC_INDEX.md`.
-4. Read `vibe/TASKS.md`.
-5. If working on an active feature, read its `FEATURE_SPEC.md`, `FEATURE_PLAN.md`, and `FEATURE_TASKS.md`.
+Static personal CV and portfolio website for Muhamad Arwin Wijaya, deployed to GitHub Pages at `marwinwijaya.github.io`. Hand-authored HTML/CSS/JS with Bootstrap, jQuery, Sass build pipeline, and a service worker for caching.
 
 ## Commands
 
 ```bash
-npm install
-npm run build
-npm start
-python -m http.server 8000
+npm install                  # install deps (express, sass, terser)
+npm run build                # compile scss/style.scss → css/style.css + css/style.min.css, minify js/custom.js → js/custom.min.js
+npm run build:css            # compile scss only
+npm run build:css:min        # compile scss compressed only
+npm run build:js             # terser js/custom.js only
+npm start                    # Express server on port 8080 (serves public/ — likely misconfigured, see risks)
+python -m http.server 8000   # simple static preview from repo root (recommended for quick preview)
 ```
 
-Notes:
-- `npm run build` works after dependencies are installed, but Sass emits deprecation warnings.
-- `npm start` needs verification because `server.js` currently serves `public/`, which was not observed.
-- `npm test` is a placeholder and currently fails.
+`npm test` is a placeholder — exits with failure.
 
-## Architecture Boundaries
+## Build Pipeline
 
-- Main public page is `index.html`.
-- Main editable behavior source is `js/custom.js`.
-- Main intended style source is `scss/style.scss`, but it currently drifts from `css/style.css`.
+- **CSS**: `scss/style.scss` → compiled to `css/style.css` and `css/style.min.css` via Sass.
+- **JS**: `js/custom.js` → minified to `js/custom.min.js` via Terser.
+- `npm run build` runs all three: `build:css`, `build:css:min`, `build:js`.
+
+### SCSS/CSS Drift Risk
+
+Production `css/style.css` currently contains rules **not present** in `scss/style.scss`. Running `npm run build` will overwrite `css/style.css` with only what SCSS produces, **remaking existing production-only styling**. Before running a full build:
+1. Compare `scss/style.scss` against `css/style.css` to identify what SCSS is missing.
+2. Merge missing rules into SCSS source first, or accept the loss.
+
+This is the #1 risk for any styling work.
+
+## Architecture
+
+### File Organization
+
+- `index.html` — single-page portfolio (hero, about, services, resume, projects, org experience, certificates, contact)
+- `css/style.css` — production stylesheet (compiled from SCSS + some production-only rules)
+- `css/legal-pages.css` — standalone CSS for legal pages, not generated from SCSS
+- `js/custom.js` — main jQuery behavior (smooth scroll, waypoints, Isotope certificate gallery, navbar, list toggles)
+- `js/site.js` — service worker registration + current year injection
+- `js/vendor/` — third-party libraries (jQuery, Bootstrap, Popper) — do not edit
+- `scss/` — Sass source including Bootstrap partials and `scss/style.scss`
+- `sw.js` — service worker (network-first for HTML, cache-first for assets)
+- `portofolio/web/` — embedded independent static demo sites (agrivania, riwa-arsa) — treat as read-only unless task-scoped
+
+### Routes
+
+All root HTML files are public routes on GitHub Pages:
+`/`, `/404.html`, `/privacy-policy.html`, `/terms-and-conditions.html`, `/cookie-policy.html`, `/security-statement.html`, `/disclaimer.html`
+
+### HTML Section IDs
+
+Sections in `index.html`: `#section-home`, `#section-about`, `#section-services`, `#section-resume`, `#section-projects`, `#section-oe`, `#section-certificate`, `#section-contact`.
+
+**Known drift**: Navbar links target `#section-work-experience` and `#section-organization`, but actual section IDs are `#section-resume` and `#section-oe`. Fix these before relying on anchor navigation.
+
+### Service Worker
+
+`sw.js` caches the app shell. Bump `CACHE_VERSION` when adding/removing cached assets. Only caches same-origin GET requests.
+
+### Deployment
+
+GitHub Pages serves from the repo root on the default branch. No GitHub Actions workflow is configured. No build step runs on deploy — `css/` and `js/custom.min.js` must be committed.
+
+## Boundaries
+
 - Do not edit `js/vendor/` or third-party/template assets unless explicitly scoped.
-- Treat `portofolio/web/*` as embedded portfolio demos unless the task names them.
-- Preserve GitHub Pages compatibility: root-relative paths should be reviewed carefully.
-- Do not remove legal pages, CV file, sitemap, robots, or service worker without an explicit decision.
-
-## Current Known Risks
-
-- Navbar links for Work Experience and Organization target missing IDs.
-- Production CSS contains rules not present in SCSS; rebuilding can remove current styling.
-- Local Express server static root is likely wrong.
-- No automated tests or CI were observed.
-
-## Active Feature
-
-### Homepage Premium Portfolio Refinement
-> Folder: `vibe/features/2026-05-26-homepage-premium-portfolio-refinement/` | Added: 2026-05-26
-
-Feature summary: Refine homepage into a premium personal portfolio for AI Engineer Lead and DevOps Lead positioning.
-
-Files in scope:
-- `index.html`
-- `scss/style.scss`
-- `css/style.css`
-- `js/custom.js` and `js/custom.min.js` if behavior changes
-- `sw.js` if cache version/assets need update
-- `vibe/CODEBASE.md`
-- `vibe/TASKS.md`
-
-Files out of scope:
-- `portofolio/web/**`
-- `fonts/icomoon/**`
-- `js/vendor/**`
-- Legal pages unless directly needed
-- `cv/CV-Muhamad_Arwin_Wijaya.pdf`
-
-Boundaries:
-- Reconcile SCSS/CSS drift before major visual edits.
-- Keep GitHub Pages root deployment safe.
-- Preserve CV download, legal pages, and existing public asset paths.
-- Do not add a frontend framework for this feature.
-
-Session startup for this feature:
-1. Read this file.
-2. Read `vibe/CODEBASE.md`.
-3. Read `vibe/ARCHITECTURE.md`.
-4. Read `vibe/SPEC_INDEX.md`.
-5. Read `vibe/TASKS.md`.
-6. Read `vibe/features/2026-05-26-homepage-premium-portfolio-refinement/FEATURE_TASKS.md`.
+- Preserve GitHub Pages root compatibility — root-relative paths must be reviewed carefully.
+- Do not remove legal pages, CV file, `sitemap.xml`, `robots.txt`, or `sw.js` without explicit decision.
+- Do not add a frontend framework.
 
 ## Session Completion
 
-Before finishing code changes:
+When finishing code changes:
 - Run `npm run build` when touching SCSS or JS build sources.
 - If build artifacts change unexpectedly, inspect diffs before keeping them.
 - Update `vibe/CODEBASE.md` if structure, routes, commands, or patterns change.
-- Update `vibe/TASKS.md` for tracked feature progress.
