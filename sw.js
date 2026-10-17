@@ -1,6 +1,6 @@
 // sw.js - "dev-friendly" service worker
 
-const CACHE_VERSION = "v17"; // <--- NAIKKAN INI tiap release
+const CACHE_VERSION = "v18"; // <--- NAIKKAN INI tiap release
 const CACHE_NAME = `portfolio-cache-${CACHE_VERSION}`;
 
 // App shell / asset yang aman di-cache
@@ -13,6 +13,7 @@ const ASSETS_TO_CACHE = [
   "/js/vendor/jquery-3.7.1.min.js",
   "/js/vendor/popper.min.js",
   "/js/vendor/bootstrap.min.js",
+  "/js/vendor/isotope.pkgd.min.js",
 ];
 
 // Install: cache aset + langsung siap update
