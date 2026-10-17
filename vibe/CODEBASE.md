@@ -126,7 +126,7 @@ No database or API data model exists. Portfolio, experience, contact, certificat
 - Google Fonts loaded from `fonts.googleapis.com` and `fonts.gstatic.com`.
 - Google Analytics / Tag Manager loaded from `googletagmanager.com`.
 - LinkedIn badge script loaded from `platform.linkedin.com`.
-- Isotope and ImagesLoaded are loaded from `unpkg.com`.
+- Isotope v3.0.6 is loaded locally from `js/vendor/isotope.pkgd.min.js`.
 - External contact links include mailto, WhatsApp, LinkedIn, GitHub, Facebook, Instagram.
 
 ## 10. GitHub Pages Notes
