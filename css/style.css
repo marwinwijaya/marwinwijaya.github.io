@@ -742,6 +742,15 @@ a:hover, a:focus, a:active {
   text-align: justify;
 }
 
+.site-hero .btn-outline-light {
+  color: #fff;
+  border-color: #fff;
+}
+.site-hero .btn-outline-light:hover {
+  background: #fff;
+  color: #000;
+}
+
 .site-hero h1.hero-title {
   font-size: 42px;
 }
@@ -993,6 +1002,60 @@ a:hover, a:focus, a:active {
   font-size: 16px;
   text-transform: uppercase;
   color: #555;
+}
+
+#section-projects .site-service-item.project-card {
+  text-align: left;
+  padding: 28px 24px;
+}
+#section-projects .site-service-item.project-card .icon {
+  margin: 0 0 18px 0;
+  width: 72px;
+  height: 72px;
+}
+#section-projects .site-service-item.project-card h3 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.35;
+  min-height: 0;
+}
+#section-projects .site-service-item.project-card p.justify {
+  flex-grow: 0;
+  min-height: 0;
+}
+#section-projects .site-service-item.project-card .list-inline.text-muted {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px !important;
+}
+#section-projects .site-service-item.project-card .list-inline.text-muted .list-inline-item {
+  margin: 0;
+}
+#section-projects .site-service-item.project-card .list-inline.text-muted .badge.badge-light {
+  border: 1px solid #e9ecef;
+  font-weight: 400;
+}
+
+.contact-intro {
+  max-width: 560px;
+  margin: 0 auto 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.contact-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+@media (max-width: 575.98px) {
+  .contact-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

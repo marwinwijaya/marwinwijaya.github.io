@@ -828,6 +828,17 @@ a {
 }
 
 // Backported production styles kept here so the Sass build preserves the live site.
+.site-hero {
+  .btn-outline-light {
+    color: $white;
+    border-color: $white;
+    &:hover {
+      background: $white;
+      color: $black;
+    }
+  }
+}
+
 .site-hero h1.hero-title {
   font-size: 42px;
 
@@ -1103,5 +1114,65 @@ a {
     font-size: 16px;
     text-transform: uppercase;
     color: #555;
+  }
+}
+
+// P3b: project card typography/stack + contact spacing (reuses existing card frame)
+#section-projects .site-service-item.project-card {
+  text-align: left;
+  padding: 28px 24px;
+
+  .icon {
+    margin: 0 0 18px 0;
+    width: 72px;
+    height: 72px;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.35;
+    min-height: 0;
+  }
+
+  p.justify {
+    flex-grow: 0;
+    min-height: 0;
+  }
+
+  .list-inline.text-muted {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px !important;
+
+    .list-inline-item {
+      margin: 0;
+    }
+
+    .badge.badge-light {
+      border: 1px solid #e9ecef;
+      font-weight: 400;
+    }
+  }
+}
+
+.contact-intro {
+  max-width: 560px;
+  margin: 0 auto 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.contact-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+
+  @media (max-width: 575.98px) {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
